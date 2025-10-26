@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASIAL</title>
+    <link rel="icon" href="img/icon/icono_1.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar principal -->
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/masial_4.jpg" alt="Logo MASIAL" width="130" height="85" class="me-2">
+            </a>
+            
+            <!-- MENÚ DE CATEGORÍAS PARA DESKTOP CON DROPDOWNS -->
+            <div class="categories-desktop d-none d-md-flex">
+                <div class="nav-item dropdown">
+                    <a class="category-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Moldes Alumnio
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item fw-bold" href="productos/chocolate-blanco.html">Todos</a></li>
+                        <li><a class="dropdown-item" href="productos/chocolate-blanco.html">Redondo</a></li>
+                        <li><a class="dropdown-item" href="productos/chocolate-blanco.html">Redondo (Alto)</a></li>
+                        <li><a class="dropdown-item" href="productos/chocolate-amargo.html">Cuadrado</a></li>
+                        <li><a class="dropdown-item" href="productos/chocolate-con-leche.html">Rectangular</a></li>
+                        <li><a class="dropdown-item" href="productos/chocolate-blanco.html">Corazón</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a class="category-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cocina
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item fw-bold" href="productos/chocolate-blanco.html">Todos</a></li>
+                        <li><a class="dropdown-item" href="marcas/wilton.html">Platos</a></li>
+                        <li><a class="dropdown-item" href="marcas/americolor.html">Volteadores</a></li>
+                        <li><a class="dropdown-item" href="marcas/chefmaster.html">Cucharas</a></li>
+                        <li><a class="dropdown-item" href="marcas/chefmaster.html">Cubiertos</a></li>
+                        <li><a class="dropdown-item" href="marcas/chefmaster.html">Saleros</a></li>
+                        <li><a class="dropdown-item" href="marcas/chefmaster.html">Servilleteros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a class="category-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mangas
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item fw-bold" href="productos/chocolate-blanco.html">Todos</a></li>
+                        <li><a class="dropdown-item" href="productos/sprinkles-colores.html">Lona</a></li>
+                        <li><a class="dropdown-item" href="productos/sprinkles-chocolate.html">Tela</a></li>
+                        <li><a class="dropdown-item" href="productos/sprinkles-estrellas.html">Silicon</a></li>
+                        <li><a class="dropdown-item" href="productos/chocolate-blanco.html">Desechables</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a class="category-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cortadores
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item fw-bold" href="productos/chocolate-blanco.html">Todos</a></li>
+                        <li><a class="dropdown-item" href="productos/sprinkles-colores.html">Plastico</a></li>
+                        <li><a class="dropdown-item" href="productos/sprinkles-chocolate.html">Metal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a class="category-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Accesorios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item fw-bold" href="productos/chocolate-blanco.html">Todos</a></li>
+                        <li><a class="dropdown-item" href="productos/duyas.html">Duyas</a></li>
+                        <li><a class="dropdown-item" href="productos/capacillos.html">Capacillos</a></li>
+                        <li><a class="dropdown-item" href="productos/espátulas.html">Espátulas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a class="category-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Fiesta
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item fw-bold" href="productos/chocolate-blanco.html">Todos</a></li>
+                        <li><a class="dropdown-item" href="marcas/wilton.html">Servilleteros</a></li>
+                        <li><a class="dropdown-item" href="marcas/americolor.html">Saleros</a></li>
+                        <li><a class="dropdown-item" href="marcas/chefmaster.html">Tortilleros</a></li>
+                        <li><a class="dropdown-item" href="marcas/chefmaster.html">Hieleras</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="brand-text">Categorías</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- OFFCANVAS MÓVIL COMPLETO -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Categorías</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+
+
+
+                    <!-- Categorías con imágenes -->
+                    <div class="categorias-destacadas mb-4">
+                        <ul class="navbar-nav flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active d-flex align-items-center" href="#">
+                                    <img src="img/masial_6.jpg" alt="Navidad" width="40" height="35" class="me-2">
+                                    Navidad
+                                </a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link active d-flex align-items-center" href="#">
+                                    <img src="img/masial_8.jpg" alt="Duyas" width="40" height="35" class="me-2">
+                                    Duyas
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active d-flex align-items-center" href="#">
+                                    <img src="img/masial_9.jpg" alt="Capacillos" width="40" height="35" class="me-2">
+                                    Capacillos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active d-flex align-items-center" href="#">
+                                    <img src="img/masial_11.jpg" alt="Capacillos" width="40" height="35" class="me-2">
+                                    Bar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+
+                    <!-- CONTENEDOR DINÁMICO PARA MOBILE -->
+                    <div class="mobile-menu-container">
+                        <!-- MENÚ PRINCIPAL PARA MOBILE -->
+                        <div class="mobile-main-menu" id="mobileMainMenu">
+                            <ul class="navbar-nav flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active d-flex align-items-center justify-content-between category-with-submenu" data-target="harina-menu">
+                                        Harina
+                                        <span class="ms-2">›</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active d-flex align-items-center justify-content-between category-with-submenu" data-target="spirinkles-menu">
+                                        Sprinkles
+                                        <span class="ms-2">›</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active d-flex align-items-center justify-content-between category-with-submenu" data-target="materia-prima-menu">
+                                        Materia Prima
+                                        <span class="ms-2">›</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active d-flex align-items-center justify-content-between category-with-submenu" data-target="accessories-menu">
+                                        Accesorios
+                                        <span class="ms-2">›</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active d-flex align-items-center justify-content-between category-with-submenu" data-target="marcas-menu">
+                                        Marcas
+                                        <span class="ms-2">›</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active d-flex align-items-center justify-content-between category-with-submenu" data-target="recetas-menu">
+                                        Recetas
+                                        <span class="ms-2">›</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Submenú de Harina -->
+                        <div class="submenu" id="harina-menu" style="display: none;">
+                            <div class="d-flex align-items-center mb-3">
+                                <button class="btn btn-sm btn-outline-secondary me-2 back-to-main">
+                                    ‹
+                                </button>
+                                <h6 class="mb-0">Harina</h6>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0">
+                                    <a href="productos/harina-trigo.html" class="text-decoration-none text-dark d-block py-2">Harina de Trigo</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="productos/harina-almendra.html" class="text-decoration-none text-dark d-block py-2">Harina de Almendra</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="productos/harina-coco.html" class="text-decoration-none text-dark d-block py-2">Harina de Coco</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Submenú de Sprinkles -->
+                        <div class="submenu" id="spirinkles-menu" style="display: none;">
+                            <div class="d-flex align-items-center mb-3">
+                                <button class="btn btn-sm btn-outline-secondary me-2 back-to-main">
+                                    ‹
+                                </button>
+                                <h6 class="mb-0">Sprinkles</h6>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0">
+                                    <a href="productos/sprinkles-colores.html" class="text-decoration-none text-dark d-block py-2">Sprinkles de Colores</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="productos/sprinkles-chocolate.html" class="text-decoration-none text-dark d-block py-2">Sprinkles de Chocolate</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="productos/sprinkles-estrellas.html" class="text-decoration-none text-dark d-block py-2">Sprinkles en Estrellas</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Submenú de Materia Prima -->
+                        <div class="submenu" id="materia-prima-menu" style="display: none;">
+                            <div class="d-flex align-items-center mb-3">
+                                <button class="btn btn-sm btn-outline-secondary me-2 back-to-main">
+                                    ‹
+                                </button>
+                                <h6 class="mb-0">Materia Prima</h6>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0">
+                                    <a href="productos/azucar-glass.html" class="text-decoration-none text-dark d-block py-2">Azúcar Glass</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="productos/esencias.html" class="text-decoration-none text-dark d-block py-2">Esencias</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="productos/colorantes.html" class="text-decoration-none text-dark d-block py-2">Colorantes</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Submenú de Accesorios -->
+                        <div class="submenu" id="accessories-menu" style="display: none;">
+                            <div class="d-flex align-items-center mb-3">
+                                <button class="btn btn-sm btn-outline-secondary me-2 back-to-main">
+                                    ‹
+                                </button>
+                                <h6 class="mb-0">Accesorios</h6>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0">
+                                    <a href="productos/duyas.html" class="text-decoration-none text-dark d-block py-2">Duyas</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="productos/capacillos.html" class="text-decoration-none text-dark d-block py-2">Capacillos</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="productos/espátulas.html" class="text-decoration-none text-dark d-block py-2">Espátulas</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Submenú de Marcas -->
+                        <div class="submenu" id="marcas-menu" style="display: none;">
+                            <div class="d-flex align-items-center mb-3">
+                                <button class="btn btn-sm btn-outline-secondary me-2 back-to-main">
+                                    ‹
+                                </button>
+                                <h6 class="mb-0">Marcas</h6>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0">
+                                    <a href="marcas/wilton.html" class="text-decoration-none text-dark d-block py-2">Wilton</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="marcas/americolor.html" class="text-decoration-none text-dark d-block py-2">AmeriColor</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="marcas/chefmaster.html" class="text-decoration-none text-dark d-block py-2">Chefmaster</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Submenú de Recetas -->
+                        <div class="submenu" id="recetas-menu" style="display: none;">
+                            <div class="d-flex align-items-center mb-3">
+                                <button class="btn btn-sm btn-outline-secondary me-2 back-to-main">
+                                    ‹
+                                </button>
+                                <h6 class="mb-0">Recetas</h6>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0">
+                                    <a href="recetas/pasteles.html" class="text-decoration-none text-dark d-block py-2">Pasteles</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="recetas/galletas.html" class="text-decoration-none text-dark d-block py-2">Galletas</a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="recetas/postres.html" class="text-decoration-none text-dark d-block py-2">Postres</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mt-0">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner ratio ratio-16x9">
+                <div class="carousel-item active">
+                    <img src="img/masial_1.jpg" class="d-block w-100 object-fit-cover" alt="Promoción 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/masial_10.jpg" class="d-block w-100 object-fit-cover" alt="Promoción 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel/slide3.jpg" class="d-block w-100 object-fit-cover" alt="Promoción 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container mt-4">
+        <div class="row">
+            
+            <!-- Card 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <img src="img/masial_7.jpg" class="card-img-top" alt="Moldes">
+                    <div class="card-body">
+                        <h5 class="card-title">Moldes Aluminio</h5>
+                        <p class="card-text">Variedad de moldes para repostería.</p>
+                        <a href="#" class="btn btn-primary">Ver productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <img src="img/categorias/cocina.jpg" class="card-img-top" alt="Cocina">
+                    <div class="card-body">
+                        <h5 class="card-title">Cocina</h5>
+                        <p class="card-text">Utensilios y accesorios de cocina.</p>
+                        <a href="#" class="btn btn-primary">Ver productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <img src="img/masial_9.jpg" class="card-img-top" alt="Mangas">
+                    <div class="card-body">
+                        <h5 class="card-title">Mangas</h5>
+                        <p class="card-text">Mangas pasteleras de diferentes materiales.</p>
+                        <a href="#" class="btn btn-primary">Ver productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <img src="img/masial_10.jpg" class="card-img-top" alt="Cortadores">
+                    <div class="card-body">
+                        <h5 class="card-title">Cortadores</h5>
+                        <p class="card-text">Cortadores de galletas y más.</p>
+                        <a href="#" class="btn btn-primary">Ver productos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Información de contacto -->
+    <div class="container-fluid bg-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Articulos de reposteria MASIAL</h5>
+                    <div class="d-flex align-items-center mb-2">
+                        <span>Aviso de privacidad</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <span>Politicas de ventas</span>
+                    </div>
+                </div>
+                
+                <!-- Redes sociales con iconos -->
+                <div class="col-lg-6">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h5 class="fw-bold mb-3">Contacto</h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            <span>Eduardo Jordan #19, La Aurora, Celaya, Gto.</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-telephone me-2"></i>
+                            <span>461-234-23-43</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-envelope me-2"></i>
+                            <span>ventas.importadoramasial@gmail.com</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-clock me-2"></i>
+                            <span>Lun-Sab 9:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-primary btn-sm rounded-circle">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="btn btn-info btn-sm rounded-circle text-white">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-dark btn-sm rounded-circle">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-sm rounded-circle">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        <a href="#" class="btn btn-primary btn-sm rounded-circle">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer -->
+    <div class="container-fluid bg-dark text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0;" >Todos los derechos reservados. © Articulos de repostería MASIAL 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

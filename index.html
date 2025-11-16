@@ -127,6 +127,13 @@
         fetch("partials/footer.html")
         .then(r => r.text())
         .then(html => document.getElementById("footer").innerHTML = html);  
+
+        const home = document.getElementById("home-link");
+        if (location.hostname.includes("github.io")) {
+            home.href = "/masial-web/index.html";  // Para producción GitHub
+        } else {
+            home.href = "../index.html";           // Para local
+        }
     </script>   
 </body> 
 </html>

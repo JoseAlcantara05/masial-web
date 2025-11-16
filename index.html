@@ -128,12 +128,22 @@
         .then(r => r.text())
         .then(html => document.getElementById("footer").innerHTML = html);  
 
-        const home = document.getElementById("home-link");
-        if (location.hostname.includes("github.io")) {
-            home.href = "/masial-web/index.html";  // Para producción GitHub
-        } else {
-            home.href = "../index.html";           // Para local
-        }
+
+
+        fetch("partials/navbar.html")
+        .then(r => r.text())
+        .then(html => {
+            document.getElementById("navbar").innerHTML = html;
+
+            // Ajustar rutas del botón home
+            const home = document.getElementById("home-link");
+
+            if (location.hostname.includes("github.io")) {
+                home.href = "/masial-web/index.html"; // GitHub Pages
+            } else {
+                home.href = "../../index.html"; // Proyecto local
+            }
+        });
     </script>   
 </body> 
 </html>

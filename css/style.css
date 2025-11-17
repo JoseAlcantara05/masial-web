@@ -290,3 +290,23 @@ body {
         color: white;
     }
 }
+
+/* ANIMACIONES MENÚ MÓVIL */
+.mobile-main-menu, .submenu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.submenu {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.submenu[style*="display: block"] {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-main-menu[style*="display: none"] {
+    opacity: 0;
+    transform: translateX(-20px);
+}

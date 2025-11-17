@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- llamar navbar -->
     <div id="navbar"></div>
 
                 <!--CARRUSEL-->
@@ -19,7 +19,7 @@
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner ratio ratio-16x9 ratio-1x1-md">
             
-            <!-- ITEM 1 - Navidad -->
+            <!-- ITEM 1 -->
             <div class="carousel-item active">
                 <picture>
                     <source media="(max-width: 768px)" srcset="img/galle_navidad-mobile.jpg">
@@ -28,7 +28,7 @@
                 </picture>
             </div>
 
-            <!-- ITEM 2 - Masial 10 -->
+            <!-- ITEM 2 -->
             <div class="carousel-item">
                 <picture>
                     <source media="(max-width: 768px)" srcset="img/pastel_navidad-mobile.jpg">
@@ -37,7 +37,7 @@
                 </picture>
             </div>
 
-            <!-- ITEM 3 - Slide 3 -->
+            <!-- ITEM 3 -->
             <div class="carousel-item">
                 <picture>
                     <source media="(max-width: 768px)" srcset="img/cupcake_navideño-mobile.jpg">
@@ -116,6 +116,7 @@
     <div id="footer"></div>
 
 
+    <script src="js/partials.js"></script>
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -135,13 +136,13 @@
         .then(html => {
             document.getElementById("navbar").innerHTML = html;
 
-            // Ajustar rutas del botón home
+            // Ajustar rutas de la imagen principal
             const home = document.getElementById("home-link");
 
             if (location.hostname.includes("github.io")) {
-                home.href = "/masial-web/index.html"; // GitHub Pages
+                home.href = "/masial-web/index.html";
             } else {
-                home.href = "../../index.html"; // Proyecto local
+                home.href = "../../index.html";
             }
         });
     </script>   

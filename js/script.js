@@ -1,77 +1,56 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Elementos del menú móvil
-    const categoryLinks = document.querySelectorAll('.category-with-submenu');
-    const submenus = document.querySelectorAll('.submenu');
-    const mobileMainMenu = document.getElementById('mobileMainMenu');
-    const offcanvasTitle = document.getElementById('offcanvasNavbarLabel');
-    const backButtons = document.querySelectorAll('.back-to-main');
+function iniciarMenuMovil() {
+  const mobileMainMenu = document.getElementById('mobileMainMenu');
+  const offcanvasTitle = document.getElementById('offcanvasNavbarLabel');
+  const offcanvasElement = document.getElementById('offcanvasNavbar');
 
-    // Función para mostrar submenú
-    function showSubmenu(targetMenuId) {
-        // Ocultar menú principal
-        mobileMainMenu.style.display = 'none';
-        
-        // Ocultar todos los submenús primero
-        submenus.forEach(menu => {
-            menu.style.display = 'none';
-        });
-        
-        // Mostrar el submenú correspondiente
-        const targetMenu = document.getElementById(targetMenuId);
-        if (targetMenu) {
-            targetMenu.style.display = 'block';
-        }
+  if (!mobileMainMenu) return;
+
+  function backToMainMenu() {
+    document.querySelectorAll('.submenu').forEach(s => s.style.display = 'none');
+    mobileMainMenu.style.display = 'block';
+    if (offcanvasTitle) offcanvasTitle.textContent = 'Categorías';
+  }
+
+  function showSubmenu(targetId, linkText = '') {
+    mobileMainMenu.style.display = 'none';
+    document.querySelectorAll('.submenu').forEach(s => s.style.display = 'none');
+    const target = document.getElementById(targetId);
+    if (target) target.style.display = 'block';
+    if (offcanvasTitle) {
+      offcanvasTitle.textContent = linkText ? linkText.replace('›','').trim() : 'Categorías';
+    }
+  }
+
+  const delegacionObjetivo = offcanvasElement || document;
+
+  delegacionObjetivo.addEventListener('click', function (e) {
+    const toggle = e.target.closest('.category-with-submenu');
+    if (toggle) {
+      e.preventDefault();
+      const target = toggle.dataset.target || toggle.getAttribute('data-target');
+      if (!target) return;
+      showSubmenu(target, toggle.textContent);
+      return;
     }
 
-    // Función para volver al menú principal
-    function backToMainMenu() {
-        // Ocultar todos los submenús
-        submenus.forEach(menu => {
-            menu.style.display = 'none';
-        });
-        
-        // Mostrar menú principal
-        mobileMainMenu.style.display = 'block';
-        
-        // Restaurar título
-        offcanvasTitle.textContent = 'Categorías';
+    const backBtn = e.target.closest('.back-to-main');
+    if (backBtn) {
+      e.preventDefault();
+      backToMainMenu();
     }
+  });
 
-    // Agregar event listeners a las categorías
-    categoryLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetMenu = this.getAttribute('data-target');
-            
-            // Mostrar submenú
-            showSubmenu(targetMenu);
-            
-            // Actualizar título con el nombre de la categoría (sin la flecha)
-            const categoryName = this.textContent.trim().replace('›', '');
-            offcanvasTitle.textContent = categoryName;
-        });
-    });
+  if (offcanvasElement && typeof bootstrap !== 'undefined') {
+    offcanvasElement.addEventListener('hidden.bs.offcanvas', backToMainMenu);
+  }
 
-    // Agregar event listeners a los botones de regresar
-    backButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            backToMainMenu();
-        });
-    });
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) backToMainMenu();
+  });
+}
 
-    // Reiniciar el menú cuando se cierre el offcanvas
-    const offcanvasElement = document.getElementById('offcanvasNavbar');
-    if (offcanvasElement) {
-        offcanvasElement.addEventListener('hidden.bs.offcanvas', function () {
-            backToMainMenu();
-        });
-    }
+window.addEventListener('partialsLoaded', () => iniciarMenuMovil());
 
-    // También aplicar el comportamiento en resize por si cambia de móvil a desktop
-    window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) {
-            backToMainMenu();
-        }
-    });
-});
+if (document.getElementById('navbar') && document.getElementById('navbar').innerHTML.trim() !== '') {
+  setTimeout(() => iniciarMenuMovil(), 50);
+}

@@ -129,22 +129,6 @@
         .then(r => r.text())
         .then(html => document.getElementById("footer").innerHTML = html);  
 
-
-
-        fetch("partials/navbar.html")
-        .then(r => r.text())
-        .then(html => {
-            document.getElementById("navbar").innerHTML = html;
-
-            // Ajustar rutas de la imagen principal
-            const home = document.getElementById("home-link");
-
-            if (location.hostname.includes("github.io")) {
-                home.href = "/masial-web/index.html";
-            } else {
-                home.href = "../../index.html";
-            }
-        });
     </script>   
 </body> 
 </html>
